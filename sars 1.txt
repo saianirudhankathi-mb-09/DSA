@@ -1,0 +1,62 @@
+Problem Statement:
+
+Chef is making a layered cake consisting of 2 layers.
+Chef has N options for the first layer, represented by an array A = [A1, A2,..., AN], where A; represents the size of the i-th first layer of the cake.
+Similarly, Chef has M options for the second layer, represented by an array B = [В1, В2,..., BM], where B; represents the size of the i-th second layer of the cake.
+Chef must ensure that the size of the second layer is strictly smaller than the size of the first layer. How many possible cakes can make by combining one first layer and one second layer, while respecting that constraint?
+Input Format
+The first line of input will contain a single integer T, denoting the number of test cases.
+Each test case consists of multiple lines of input.
+The first line contains 2 integers - N and M.
+The second line contains N integers - A1, A2,..., ΑΝ.
+The third line contains N integers - B1, B2,..., Вм.
+Output Format
+For each test case, output on a new line the number of valid layered cakes Chef can make.
+
+
+
+
+CODE:
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		
+		
+		while(t--!=0){
+		    int n=sc.nextInt();
+		    int m=sc.nextInt();
+		    int a[]=new int[n];
+		    int b[]=new int[m];
+		    
+		    
+		    for(int i=0;i<n;i++){
+		        a[i]=sc.nextInt();
+		    }
+		    
+		    
+		    for(int i=0;i<m;i++){
+		        b[i]=sc.nextInt();
+		    }
+		    
+		    int ct=0;
+		    for(int i=0;i<n;i++){
+		        for(int j=0;j<m;j++){
+		            if(a[i]>b[j]) ct++;
+		        }
+		    }
+		    
+		    System.out.println(ct);
+		}
+		
+
+	}
+}
